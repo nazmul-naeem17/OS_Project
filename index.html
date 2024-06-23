@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>CPU Scheduling Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="images/55191.png" alt="" /></span>
+					<h1 id="logo"><a href="#">Scheduling Algorithms</a></h1>
+					<p>Esearchers414</p><br />
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a class="icon solid fa-home" href="#one" class="active">Home</a></li>
+						<li><a class="icon solid fa-cog" href="#two">Process Scheduler</a></li>
+						<li><a class="icon solid fa-retweet" href="#three">Scheduling Algorithms</a></li>
+						<li><a class="icon solid fa-sitemap" href="#four">Team Members</a></li>
+					</ul>
+				</nav>
+				
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img src="images/vector.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>CPU Scheduling Algorithms</h2>
+									</header>
+									<p>CPU scheduling is the process of choosing which process will use the CPU to carry out its execution while another is put on wait. Making ensuring that the OS at least chooses one of the processes that are available in the ready queue for execution while the CPU is idle is the primary responsibility of CPU scheduling. The CPU scheduler is in charge of the selecting process. It chooses a memory-based process that is prepared for execution.</p>
+                                    
+                                    <p>Scroll down to see how processes are scheduled. For a deeper understanding, click on the descriptions and tutorials below.</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="container">
+									<h2>Process Scheduler</h2>
+											  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    
+        <h3>Algorithms : </h3>
+        <form id="algorithms">
+            <input type="radio" name="algo" id="fcfs" checked> <label for="fcfs">FCFS</label> <br>
+            <input type="radio" name="algo" id="sjf"> <label for="sjf">SJF</label> <br>
+            <input type="radio" name="algo" id="ljf"> <label for="ljf">LJF</label> <br>
+            <input type="radio" name="algo" id="rr"> <label for="rr">Round Robin</label> <br>
+            <input type="radio" name="algo" id="srtf"> <label for="srtf">SRTF</label> <br>
+        </form>
+        <br>
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th class="process-id">Process ID</th>
+                    <th class="priority hide">Priority</th>
+                    <th class="arrival-time">Arrival Time</th>
+                    <th class="process-time" colspan="1">Burst Time</th>
+                    <th class="process-btn"><button type="button" class="add-process-btn">+</button></th>
+                    <th class="process-btn"><button type="button" class="remove-process-btn">-</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="process-id" rowspan="2">P1</td>
+                    <td class="priority hide" rowspan="2"><input type="number" min="1" step="1" value="1"></td>
+                    <td class="arrival-time" rowspan="2"><input type="number" min="0" step="1" value="0"> </td>
+                    <td class="process-time cpu process-heading" colspan="">CPU</td>
+                    
+                </tr>
+                <tr>
+                    <td class="process-time cpu process-input"><input type="number" min="1" step="1" value="1"> </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="time-quantum" class="hide">
+            <br>
+            <label for="tq">Time Quantum : </label>
+            <input type="number" name="Time Quantum" id="tq" min="1" step="1" value="2">
+        </div>
+        <br>
+        <button type="button" class="add-btn">Add</button>
+        <button type="button" class="remove-btn">Delete</button>
+        <button type="button" class="calculate">Run</button>
+        <div id="output"></div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="script.js"></script>
+    </div>
+						<!-- Three -->
+							<section id="three">
+								<div class="container">
+									<h3>Scheduling Algorithms</h3>
+									<p>In computing, scheduling is the method by which work is assigned to resources that complete the work. The work may be virtual computation elements such as threads, processes or data flows, which are in turn scheduled onto hardware resources such as processors, network links or expansion cards.
+A scheduler is what carries out the scheduling activity. Schedulers are often implemented so they keep all computer resources busy (as in load balancing), allow multiple users to share system resources effectively, or to achieve a target quality of service. Scheduling is fundamental to computation itself, and an intrinsic part of the execution model of a computer system; the concept of scheduling makes it possible to have computer multitasking with a single central processing unit (CPU). Given below are the description about <b>5</b> implemented algorithms</p>
+									<div class="features">
+                                        <article> 
+											<div class="box">
+												<h4>First Come First Serve (FCFS)</h4>
+												<p>First Come First Serve is an operating system scheduling algorithm that automatically executes queued requests and processes in order of their arrival.
+It is the easiest and simplest CPU scheduling algorithm. In this type of algorithm, processes which requests the CPU first get the CPU allocation first. 
+This is managed with a FIFO queue.</p>
+                                                <p> <h5>Algorithm for FCFS Scheduling</h5>
+                                                    The waiting time for the first process is 0 as it is executed first.<br>
+                                                    The waiting time for the upcoming process can be calculated by:
+                                                    <br><b>wt[i] =  ( at[i – 1] + bt[i – 1] + wt[i – 1] ) – at[i]</b>
+                                                    <br>
+                                                    where 
+                                                    <br>
+                                                    <i>wt[i]</i> = waiting time of current process 
+                                                    <i>at[i-1]</i> = arrival time of previous process 
+                                                    <i>bt[i-1]</i> = burst time of previous process 
+                                                    <i>wt[i-1]</i> = waiting time of previous process 
+                                                    <i>at[i]</i> = arrival time of current process 
+                                                    <br>
+                                                    The Average waiting time can be calculated by: <br> 
+                                                    <b>Average Waiting Time = (sum of all waiting time)/(Number of processes)</b></p>
+											</div>                          
+										</article>
+
+										<article>
+											<div class="box">
+												<h4>Shortest Job First (SJF)</h4>
+												<p>Shortest Job First is a scheduling policy that selects the waiting process with the smallest execution time to execute next. It is a non-preemptive and Greedy algorithm.
+Shortest Job first has the advantage of having a minimum average waiting time among all scheduling algorithms.
+It may cause starvation if shorter processes keep coming.</p>
+                                                <p><h5>Formulas:</h5>
+                                        <b>Turn Around time = Completion time – arrival time <br>
+                                            Waiting Time = Turn around time – burst time</b>
+                                        </p>
+											</div>
+										</article>
+
+                                        <article>
+											<div class="box">
+												<h4>Longest Job First (LJF)</h4>
+												<p>Longest Job First is a non-preemptive scheduling algorithm. 
+This algorithm is based upon the burst time of the processes. The processes are put into the ready queue based on their burst times i.e., in a descending order of the burst times. 
+As the name suggests this algorithm is based upon the fact that the process with the largest burst time is processed first.
+The burst time of only those processes is considered that have arrived in the system until that time.</p>
+                                               <p><h5>Formulas</h5>
+                                            <b>Turn Around Time (TAT)
+                                                = (Completion Time) – (Arrival Time)</b>
+                                                <br>
+                                                Also, <br>
+                                                <b>Waiting Time (WT)
+                                                = (Turn Around Time) – (Burst Time) </b></p>
+											</div>
+                                        </article>
+                                        
+                                        <article>										
+											<div class="box">
+												<h4>Round Robin Scheduling</h4>
+												<p>Round Robin is the preemptive process scheduling algorithm.
+Each process is provided a fix time to execute, it is called a quantum.
+Once a process is executed for a given time period, it is preempted and other process executes for a given time period.
+Context switching is used to save states of preempted processes.</p>
+                                                <p><h5>Formulas:</h5>
+                                                   <i><b> Completion Time</b></i><br>
+                                                    It is the time at which any process completes its execution.
+                                                    <br><i><b>Turn Around Time</b></i><br>
+                                                    This mainly indicates the time Difference between completion time and arrival time. <br>The Formula to calculate the same is: <br> <b> Turn Around Time = Completion Time – Arrival Time</b>
+                                                    <br><i><b>Waiting Time(W.T):</b></i>
+                                                    It Indicates the time Difference between turn around time and burst time. <br>
+                                                    <b>Waiting Time = Turn Around Time – Burst Time</b></p>
+											</div>
+										</article>
+
+                                        <article>											
+											<div class="box">
+												<h4>Shortest Remaining Time First (SRTF)</h4>
+												<p>This Algorithm is the preemptive version of SJF scheduling. In SRTF, the execution of the process can be stopped after certain amount of time. 
+At the arrival of every process, the short term scheduler schedules the process with the least remaining burst time among the list of available processes and the running process.</p>
+                                                <p><h5>Formulas:</h5>
+                                                   <b>Turn Around time = Completion time – arrival time <br>
+                                                      Waiting Time = Turn around time – burst time</b>
+                                                </p>	
+                                        </div>
+										</article>
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+							<section id="four">
+								<div class="container">
+									<h3>Developed by</h3>
+                                    <div class="box">
+                                    <p>Md Kazi Ikram Uddin <span>C213048</span></p>
+                                    <p>Nazmul Hasan Naeem <span>C213115</span></p>
+				                    <p>Omer Faruq <span>C213046</span></p>
+				                    <p>Syed Waizul Munir <span>C211116</span></p>
+								</div>
+                                </div>
+							</section> 
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+
+
+										
